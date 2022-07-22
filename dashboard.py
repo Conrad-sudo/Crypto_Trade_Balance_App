@@ -19,71 +19,12 @@ def get_main():
     table.show()
 
 
-def get_btc():
-    df=main.get_ftx()['df']['btc']
-    acc_window=Tk()
-    acc_window.title('FTX BTC Account')
-    frame = Frame(acc_window)
-    frame.grid(row=0, column=0)
-    # create a table
-    table = Table(frame, dataframe=df, height=40)
-    table.show()
-
-
-def get_eth():
-    df=main.get_ftx()['df']['eth']
-    acc_window=Tk()
-    acc_window.title('FTX ETH Account')
-    frame = Frame(acc_window)
-    frame.grid(row=0, column=0)
-    # create a table
-    table = Table(frame, dataframe=df, height=40)
-    table.show()
-
-
-def get_sol():
-    df=main.get_ftx()['df']['sol']
-    acc_window=Tk()
-    acc_window.title('FTX SOL Account')
-    frame = Frame(acc_window)
-    frame.grid(row=0, column=0)
-    # create a table
-    table = Table(frame, dataframe=df, height=40)
-    table.show()
-
-
-def get_tether():
-    df=main.get_ftx()['df']['tether']
-    acc_window=Tk()
-    acc_window.title('FTX Tether Account')
-    frame = Frame(acc_window)
-    frame.grid(row=0, column=0)
-    # create a table
-    table = Table(frame, dataframe=df, height=40)
-    table.show()
-
-
-def get_yedek():
-    df=main.get_ftx()['df']['yedek']
-    acc_window=Tk()
-    acc_window.title('FTX Yedek Account')
-    frame = Frame(acc_window)
-    frame.grid(row=0, column=0)
-    # create a table
-    table = Table(frame, dataframe=df, height=40)
-    table.show()
 
 
 
 def ftx_handler():
     main_button = Button(window_dispatcher['ftx'], text='Get Main', width=13, height=2, bg='green',font=('Arial', 10, 'bold'), command=get_main).grid(row=0, column=1)
-    btc_button = Button(window_dispatcher['ftx'], text='Get BTC', width=13, height=2, bg='green',font=('Arial', 10, 'bold'), command=get_btc).grid(row=0, column=2)
-    eth_button = Button(window_dispatcher['ftx'], text='Get ETH', width=13, height=2, bg='green',font=('Arial', 10, 'bold'),command=get_eth).grid(row=1, column=1)
-    sol_button = Button(window_dispatcher['ftx'], text='Get SOL', width=13, height=2, bg='green',font=('Arial', 10, 'bold'), command=get_sol).grid(row=1, column=2)
-    tether_button = Button(window_dispatcher['ftx'], text='Get Tether', width=13, height=2, bg='green',font=('Arial', 10, 'bold'),command=get_tether).grid(row=2, column=1)
-    yedek_button = Button(window_dispatcher['ftx'], text='Get Yedek', width=13, height=2, bg='green',font=('Arial', 10, 'bold'),command=get_yedek).grid(row=2, column=2)
-    orders_button = Button(window_dispatcher['ftx'], text='Get Filled Orders Excel', width=27, height=2, bg='blue',font=('Arial', 10, 'bold'),command=main.get_filled_orders_excel).grid(row=3, column=0)
-
+   
 
 
 def update():
@@ -103,7 +44,7 @@ def update():
     root.after(aralik,update)
 
 
-
+#Gets and displays the totals
 def get_account():
 
     message_label.configure(text='')
